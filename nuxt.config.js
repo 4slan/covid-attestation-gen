@@ -87,7 +87,7 @@ export default {
   ],
 
   sitemap: {
-    hostname: 'http://cococertif.com/',
+    hostname: process.env.NUXT_BASE_FRONT_URL,
     gzip: true,
     routes: [
       '/'
@@ -130,7 +130,8 @@ export default {
   ** Server Middleware
   */
   serverMiddleware: {
-    '/api': '~/api'
+    '/api': '~/api',
+    serverMiddleware: ["redirect-ssl"]
   },
 
   /*
